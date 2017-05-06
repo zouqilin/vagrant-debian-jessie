@@ -63,6 +63,7 @@ BOX=${BOX:-debian-jessie-${ARCH}}
 ISO_FILE="debian-${DEBVER}-${ARCH}-netinst.iso"
 ISO_BASEURL="${DEBIAN_CDIMAGE_URL}${DEBVER}/${ARCH}/iso-cd"
 ISO_URL="${ISO_BASEURL}/${ISO_FILE}"
+echo $ISO_URL
 ISO_MD5=$(curl -sS ${ISO_BASEURL}/MD5SUMS | grep ${ISO_FILE} | cut -f1 -d" ")
 
 if [ "$ARCH" = "amd64" ]; then
